@@ -53,6 +53,7 @@ public class VideoStreamingCapability extends RPCStruct {
      * @since SmartDeviceLink 7.0.0
      */
     public static final String KEY_ADDITIONAL_VIDEO_STREAMING_CAPABILITIES = "additionalVideoStreamingCapabilities";
+    public static final String KEY_PREFERRED_FPS = "preferredFPS";
 
     public VideoStreamingCapability() {
     }
@@ -182,6 +183,22 @@ public class VideoStreamingCapability extends RPCStruct {
      */
     public VideoStreamingCapability setScale(Double scale) {
         setValue(KEY_SCALE, scale);
+        return this;
+    }
+
+
+    /**
+     * @return the preferred frame rate per second (FPS) specified by head unit.
+     */
+    public Integer getPreferredFPS() {
+        return getInteger(KEY_PREFERRED_FPS);
+    }
+
+    /**
+     * @param preferredFPS preferred frame rate per second
+     */
+    public VideoStreamingCapability setPreferredFPS(Integer preferredFPS) {
+        setValue(KEY_PREFERRED_FPS, preferredFPS);
         return this;
     }
 
